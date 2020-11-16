@@ -1,1 +1,1 @@
-1111
+Enter a number here that will be used as a seed for the random number generator.
