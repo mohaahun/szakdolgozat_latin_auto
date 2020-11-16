@@ -40,7 +40,6 @@ string Dekodolo::Visszafejtes(string input, vector<int> randszamok)
 		bitset<8> b(input.c_str()[i]);
 		binary_input += b.to_string();
 	}
-	//cout << binary_input << endl;
 
 
 	//4 bites szeletekre vágás és a szeletek integerré alakítása
@@ -96,15 +95,4 @@ void Dekodolo::GetDekodoloMx()
 			decoder[x][coder[x][y]] = y;
 		}
 	}
-	/*//Dekódolómátrix kiíratása
-	cout << endl << endl;
-	for (int i = 0;i < 16;i++)
-	{
-		for (int j = 0;j < 16;j++)
-		{
-			cout << decoder[i][j] << " ";
-		}
-		cout << endl;
-	}
-	cout << endl << endl;*/
 }
