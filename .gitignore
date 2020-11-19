@@ -338,3 +338,5 @@ ASALocalRun/
 
 # BeatPulse healthcheck temp database
 healthchecksdb
+/szakdolgozat_latin_auto/coded.txt
+/szakdolgozat_latin_auto/decoded.txt

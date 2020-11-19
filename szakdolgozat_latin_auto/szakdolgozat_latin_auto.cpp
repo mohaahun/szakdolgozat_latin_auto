@@ -25,7 +25,7 @@ int main()
 
     auto stop = chrono::high_resolution_clock::now(); //stop timer
     auto duration = chrono::duration_cast<chrono::microseconds>(stop - start);
-    cout << "Runtime: " << duration.count() << "microseconds" << endl;
+    cout << "Total Runtime: " << duration.count() << "microseconds" << endl;
     _getch();
     return 0;
 }

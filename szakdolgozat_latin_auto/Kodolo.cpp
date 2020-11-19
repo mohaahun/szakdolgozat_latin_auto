@@ -8,6 +8,7 @@
 #include <conio.h>
 #include <fstream>
 #include <streambuf>
+#include <chrono>
 
 using namespace std;
 
@@ -15,6 +16,8 @@ using namespace std;
 //Kódoló algoritmus "main" függvénye
 void Kodolo::GetTitkosSzoveg(string input)
 {
+	auto kstart = chrono::high_resolution_clock::now(); //start Kodolo timer
+
 	cout << "CODING IN PROGRESS" << endl;
 	vector<int> randszamok;
 	RandomGen randomgen;
@@ -26,6 +29,10 @@ void Kodolo::GetTitkosSzoveg(string input)
 	ofstream codedfile("coded.txt");
 	codedfile << output;
 	codedfile.close();
+
+	auto kstop = chrono::high_resolution_clock::now(); //stop timer
+	auto kduration = chrono::duration_cast<chrono::microseconds>(kstop - kstart);
+	cout << " Kodolo Runtime: " << kduration.count() << "microseconds" << endl;
 
 	Dekodolo d;
 	d.GetDekodoltSzoveg(output);

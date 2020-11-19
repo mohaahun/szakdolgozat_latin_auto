@@ -7,6 +7,7 @@
 #include <conio.h>
 #include <fstream>
 #include <streambuf>
+#include <chrono>
 
 using namespace std;
 
@@ -14,6 +15,9 @@ using namespace std;
 
 void Dekodolo::GetDekodoltSzoveg(string coded)
 {
+
+	auto dstart = chrono::high_resolution_clock::now(); //start Kodolo timer
+
 	cout << "DECODING IN PROGRESS" << endl;
 	vector<int> randszamok;
 	RandomGen randomgen;
@@ -27,6 +31,10 @@ void Dekodolo::GetDekodoltSzoveg(string coded)
 	decodedfile << output;
 	decodedfile.close();
 
+
+	auto dstop = chrono::high_resolution_clock::now(); //stop timer
+	auto dduration = chrono::duration_cast<chrono::microseconds>(dstop - dstart);
+	cout << " Dekodolo Runtime: " << dduration.count() << "microseconds" << endl;
 }
 
 
